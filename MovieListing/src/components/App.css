@@ -1,0 +1,238 @@
+/* Global Reset & Base */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  background-color: #0f1014;
+  color: #ffffff;
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+a {
+  color: #1f80e0;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+#root {
+  width: 100%;
+  padding: 1rem;
+}
+
+/* Auth Pages */
+.auth-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #0f1014;
+}
+
+.centered-container {
+  max-width: 400px;
+  padding: 2rem;
+  background: #1c1e22;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Dashboard Container */
+.dashboard-container {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Dashboard Header Bar */
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: #0f1014;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* Logout Button Styles */
+.logout-btn {
+  background-color: #dc3545;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.logout-btn:hover {
+  background-color: #c82333;
+}
+
+h2 {
+  color: #ffffff;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+/* Movie Grid */
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1.5rem;
+  padding: 1rem 0;
+}
+
+/* Movie Card */
+.movie-card {
+  background: #1c1e22;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.movie-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.08);
+}
+
+.movie-poster {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.movie-card h3 {
+  font-size: 1rem;
+  margin: 0.75rem 0 0.25rem;
+  color: #fff;
+}
+
+.movie-card p {
+  font-size: 0.85rem;
+  color: #aaa;
+  margin-bottom: 0.75rem;
+}
+
+/* Input Fields */
+input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  border: none;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  background: #2a2c30;
+  color: #fff;
+}
+
+input:focus {
+  outline: none;
+  border: 1px solid #1f80e0;
+}
+
+/* Buttons */
+button {
+  background-color: #1f80e0;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.25rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+button:hover {
+  background-color: #1868b7;
+}
+
+/* Charts Section */
+.charts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+  margin: 30px 0;
+}
+
+.chart-card {
+  background: #1c1e22;
+  border-radius: 10px;
+  padding: 20px;
+  flex: 1 1 30%;
+  min-width: 250px;
+  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.05);
+}
+
+/* Filters */
+.filters-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.filters-row input {
+  flex: 1;
+  min-width: 200px;
+}
+
+/* Media Queries for Responsive Layout */
+@media (max-width: 768px) {
+  .dashboard-container {
+    padding: 1rem;
+  }
+
+  .movie-grid {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  }
+
+  .movie-card h3 {
+    font-size: 0.95rem;
+  }
+
+  .movie-card p {
+    font-size: 0.8rem;
+  }
+
+  .centered-container {
+    padding: 1.5rem;
+    margin: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboard-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .logout-btn {
+    align-self: flex-end;
+    width: fit-content;
+  }
+}
